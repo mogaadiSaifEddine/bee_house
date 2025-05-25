@@ -2,10 +2,12 @@ package com.beehopuse.service;
 
 import com.beehopuse.model.Farm;
 import com.beehopuse.model.User;
+import jakarta.ejb.Remote;
 
 import java.sql.SQLException;
 import java.util.List;
 
+@Remote
 public interface FarmService {
 
     public List<Farm> getFarmsByOwner(User owner) throws SQLException;

@@ -13,30 +13,40 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 
 @WebServlet("/farms")
 public class FarmServlet extends HttpServlet {
+    private static final Logger logger = Logger.getLogger(FarmServlet.class.getName());
 
     @EJB
     private FarmService farmService;
 
     @Override
     public void init() throws ServletException {
-        // Initialize the service
+        super.init();
+        if (farmService == null) {
+            throw new ServletException("FarmService EJB injection failed");
+        }
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("currentUser") == null) {
-            response.sendRedirect(request.getContextPath() + "/login");
-            return;
-        }
-        User currentUser = (User) session.getAttribute("currentUser");
+        // if (session == null || session.getAttribute("currentUser") == null) {
+        // response.sendRedirect(request.getContextPath() + "/login");
+        // return;
+        // }
+
+        // User currentUser = (User) session.getAttribute("currentUser");
         try {
+            if (farmService == null) {
+                throw new ServletException("FarmService is not properly initialized");
+            }
+
             // Get farms for the current user
-            List<Farm> farms = farmService.getFarmsByOwner(currentUser);
+            List<Farm> farms = farmService.getAllFarms();
 
             // Set the farms in request attribute
             request.setAttribute("farms", farms);
@@ -46,7 +56,7 @@ public class FarmServlet extends HttpServlet {
                     .forward(request, response);
 
         } catch (Exception e) {
-            // Log the error
+            logger.severe("Error in FarmServlet: " + e.getMessage());
             e.printStackTrace();
 
             // Set error message

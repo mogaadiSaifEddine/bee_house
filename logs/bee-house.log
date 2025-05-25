@@ -297,3 +297,32 @@ java.lang.IllegalArgumentException: Illegal base64 character 24
 2025-05-25 21:41:53.439 [main] INFO  com.beehopuse.config.DatabaseConfig - Database connection test successful
 2025-05-25 21:41:53.440 [main] INFO  com.beehopuse.config.DatabaseConfig - Database connection pool initialized successfully
 2025-05-25 21:45:48.301 [JettyShutdownThread] INFO  com.beehopuse.config.DatabaseConfig - Database connection pool closed successfully
+2025-05-25 21:46:57.746 [main] INFO  com.beehopuse.config.DatabaseConfig - Initializing database connection pool...
+2025-05-25 21:46:57.754 [main] INFO  com.beehopuse.config.DatabaseConfig - Database properties loaded successfully
+2025-05-25 21:46:57.837 [main] INFO  com.beehopuse.config.DatabaseConfig - DataSource configured with URL: jdbc:mysql://localhost:3306/bee_house?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2025-05-25 21:46:58.730 [main] INFO  com.beehopuse.config.DatabaseConfig - Database connection test successful
+2025-05-25 21:46:58.732 [main] INFO  com.beehopuse.config.DatabaseConfig - Database connection pool initialized successfully
+2025-05-25 21:48:06.538 [JettyShutdownThread] INFO  com.beehopuse.config.DatabaseConfig - Database connection pool closed successfully
+2025-05-25 21:48:18.764 [main] INFO  com.beehopuse.config.DatabaseConfig - Initializing database connection pool...
+2025-05-25 21:48:18.772 [main] INFO  com.beehopuse.config.DatabaseConfig - Database properties loaded successfully
+2025-05-25 21:48:18.844 [main] INFO  com.beehopuse.config.DatabaseConfig - DataSource configured with URL: jdbc:mysql://localhost:3306/bee_house?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2025-05-25 21:48:19.594 [main] INFO  com.beehopuse.config.DatabaseConfig - Database connection test successful
+2025-05-25 21:48:19.596 [main] INFO  com.beehopuse.config.DatabaseConfig - Database connection pool initialized successfully
+2025-05-25 21:49:26.626 [JettyShutdownThread] INFO  com.beehopuse.config.DatabaseConfig - Database connection pool closed successfully
+2025-05-25 21:49:37.865 [main] INFO  com.beehopuse.config.DatabaseConfig - Initializing database connection pool...
+2025-05-25 21:49:37.870 [main] INFO  com.beehopuse.config.DatabaseConfig - Database properties loaded successfully
+2025-05-25 21:49:37.929 [main] INFO  com.beehopuse.config.DatabaseConfig - DataSource configured with URL: jdbc:mysql://localhost:3306/bee_house?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2025-05-25 21:49:38.810 [main] INFO  com.beehopuse.config.DatabaseConfig - Database connection test successful
+2025-05-25 21:49:38.811 [main] INFO  com.beehopuse.config.DatabaseConfig - Database connection pool initialized successfully
+2025-05-25 21:50:30.805 [JettyShutdownThread] INFO  com.beehopuse.config.DatabaseConfig - Database connection pool closed successfully
+2025-05-25 21:50:41.995 [main] INFO  com.beehopuse.config.DatabaseConfig - Initializing database connection pool...
+2025-05-25 21:50:42.003 [main] INFO  com.beehopuse.config.DatabaseConfig - Database properties loaded successfully
+2025-05-25 21:50:42.075 [main] INFO  com.beehopuse.config.DatabaseConfig - DataSource configured with URL: jdbc:mysql://localhost:3306/bee_house?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2025-05-25 21:50:42.709 [main] INFO  com.beehopuse.config.DatabaseConfig - Database connection test successful
+2025-05-25 21:50:42.710 [main] INFO  com.beehopuse.config.DatabaseConfig - Database connection pool initialized successfully
+2025-05-25 21:53:02.716 [JettyShutdownThread] INFO  com.beehopuse.config.DatabaseConfig - Database connection pool closed successfully
+2025-05-25 21:53:13.532 [main] INFO  com.beehopuse.config.DatabaseConfig - Initializing database connection pool...
+2025-05-25 21:53:13.540 [main] INFO  com.beehopuse.config.DatabaseConfig - Database properties loaded successfully
+2025-05-25 21:53:13.600 [main] INFO  com.beehopuse.config.DatabaseConfig - DataSource configured with URL: jdbc:mysql://localhost:3306/bee_house?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2025-05-25 21:53:14.353 [main] INFO  com.beehopuse.config.DatabaseConfig - Database connection test successful
+2025-05-25 21:53:14.354 [main] INFO  com.beehopuse.config.DatabaseConfig - Database connection pool initialized successfully
