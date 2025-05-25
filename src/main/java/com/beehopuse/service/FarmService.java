@@ -2,13 +2,21 @@ package com.beehopuse.service;
 
 import com.beehopuse.model.Farm;
 import com.beehopuse.model.User;
+
+import java.sql.SQLException;
 import java.util.List;
 
 public interface FarmService {
-    Farm createFarm(Farm farm);
-    Farm updateFarm(Farm farm);
-    void deleteFarm(Long id);
-    Farm getFarmById(Long id);
-    List<Farm> getFarmsByOwner(User owner);
-    List<Farm> getAllFarms();
-} 
+
+    public List<Farm> getFarmsByOwner(User owner) throws SQLException;
+
+    public List<Farm> getAllFarms() throws SQLException;
+
+    public Farm getFarmById(Long id) throws SQLException;
+
+    public Farm createFarm(Farm farm) throws SQLException;
+
+    public Farm updateFarm(Farm farm) throws SQLException;
+
+    public void deleteFarm(Long id) throws SQLException;
+}

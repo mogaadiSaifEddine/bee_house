@@ -4,14 +4,14 @@ com\beehopuse\servlet\FarmServlet.class
 com\beehopuse\listener\ResourceBundleListener$XMLResourceBundleControl.class
 com\beehopuse\model\Visit.class
 com\beehopuse\servlet\DashboardServlet.class
-com\beehopuse\util\HibernateUtil.class
+com\beehopuse\servlet\LoginServlet.class
 com\beehopuse\model\Site.class
 com\beehopuse\service\SiteService.class
 com\beehopuse\model\Farm.class
 com\beehopuse\model\User.class
 com\beehopuse\service\FarmService.class
+com\beehopuse\servlet\LogoutServlet.class
 com\beehopuse\filter\AuthenticationFilter.class
-com\beehopuse\servlet\SiteServlet.class
 com\beehopuse\model\HiveExtension.class
 com\beehopuse\webservice\HoneyQuantityService.class
 com\beehopuse\servlet\BaseServlet.class

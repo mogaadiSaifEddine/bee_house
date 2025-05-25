@@ -3,6 +3,7 @@ package com.beehopuse.servlet;
 import com.beehopuse.model.Site;
 import com.beehopuse.model.Farm;
 import com.beehopuse.service.SiteService;
+import com.mysql.cj.result.SqlDateValueFactory;
 import com.beehopuse.service.FarmService;
 import jakarta.ejb.EJB;
 import jakarta.servlet.ServletException;
@@ -10,14 +11,15 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet("/sites/*")
 public class SiteServlet extends BaseServlet {
-    
+
     @EJB
     private SiteService siteService;
-    
+
     @EJB
     private FarmService farmService;
 
@@ -32,13 +34,34 @@ public class SiteServlet extends BaseServlet {
 
         switch (action) {
             case "list":
-                listSites(request, response);
+                try {
+                    listSites(request, response);
+                } catch (NumberFormatException | ServletException | IOException | SQLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
                 break;
             case "add":
                 if (request.getMethod().equals("POST")) {
-                    addSite(request, response);
+                    try {
+                        addSite(request, response);
+                    } catch (ServletException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 } else {
-                    showAddForm(request, response);
+                    try {
+                        showAddForm(request, response);
+                    } catch (NumberFormatException | ServletException | IOException | SQLException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
                 }
                 break;
             case "edit":
@@ -58,10 +81,10 @@ public class SiteServlet extends BaseServlet {
     }
 
     private void listSites(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, NumberFormatException, SQLException {
         String farmId = request.getParameter("farmId");
         List<Site> sites;
-        
+
         if (farmId != null && !farmId.isEmpty()) {
             Farm farm = farmService.getFarmById(Long.parseLong(farmId));
             sites = siteService.getSitesByFarm(farm);
@@ -69,13 +92,13 @@ public class SiteServlet extends BaseServlet {
         } else {
             sites = siteService.getAllSites();
         }
-        
+
         request.setAttribute("sites", sites);
         forward("site/list", request, response);
     }
 
     private void showAddForm(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, NumberFormatException, SQLException {
         String farmId = request.getParameter("farmId");
         if (farmId != null && !farmId.isEmpty()) {
             Farm farm = farmService.getFarmById(Long.parseLong(farmId));
@@ -85,7 +108,7 @@ public class SiteServlet extends BaseServlet {
     }
 
     private void addSite(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         String name = request.getParameter("name");
         String description = request.getParameter("description");
         Double latitude = Double.parseDouble(request.getParameter("latitude"));
@@ -94,7 +117,7 @@ public class SiteServlet extends BaseServlet {
         Long farmId = Long.parseLong(request.getParameter("farmId"));
 
         Farm farm = farmService.getFarmById(farmId);
-        
+
         Site site = new Site();
         site.setName(name);
         site.setDescription(description);
@@ -140,13 +163,14 @@ public class SiteServlet extends BaseServlet {
         Long siteId = Long.parseLong(request.getParameter("id"));
         Site site = siteService.getSiteById(siteId);
         Long farmId = site.getFarm().getId();
-        
+
         siteService.deleteSite(siteId);
         redirect("/sites?farmId=" + farmId, response);
     }
 
     private String getGoogleMapsApiKey() {
-        // In a real application, this should be loaded from a configuration file or environment variable
+        // In a real application, this should be loaded from a configuration file or
+        // environment variable
         return System.getProperty("google.maps.api.key", "YOUR_API_KEY");
     }
-} 
+}
