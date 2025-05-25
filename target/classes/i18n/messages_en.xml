@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <!-- Common -->
+    <entry key="app.title">Bee House Management</entry>
+    <entry key="app.welcome">Welcome to the Bee House Management System</entry>
+    
+    <!-- Navigation -->
+    <entry key="nav.dashboard">Dashboard</entry>
+    <entry key="nav.farms">Farms</entry>
+    <entry key="nav.sites">Sites</entry>
+    <entry key="nav.hives">Hives</entry>
+    <entry key="nav.visits">Visits</entry>
+    <entry key="nav.reports">Reports</entry>
+    
+    <!-- Farm Management -->
+    <entry key="farm.title">Farm Management</entry>
+    <entry key="farm.add">Add Farm</entry>
+    <entry key="farm.edit">Edit Farm</entry>
+    <entry key="farm.delete">Delete Farm</entry>
+    
+    <!-- Site Management -->
+    <entry key="site.title">Site Management</entry>
+    <entry key="site.add">Add Site</entry>
+    <entry key="site.edit">Edit Site</entry>
+    <entry key="site.delete">Delete Site</entry>
+    <entry key="site.location">Location</entry>
+    
+    <!-- Hive Management -->
+    <entry key="hive.title">Hive Management</entry>
+    <entry key="hive.add">Add Hive</entry>
+    <entry key="hive.edit">Edit Hive</entry>
+    <entry key="hive.delete">Delete Hive</entry>
+    <entry key="hive.frames">Frames</entry>
+    <entry key="hive.extensions">Extensions</entry>
+    
+    <!-- Visit Management -->
+    <entry key="visit.title">Visit Management</entry>
+    <entry key="visit.schedule">Schedule Visit</entry>
+    <entry key="visit.report">Visit Report</entry>
+    <entry key="visit.status">Status</entry>
+    
+    <!-- Measurements -->
+    <entry key="measure.weight">Weight</entry>
+    <entry key="measure.temperature">Temperature</entry>
+    <entry key="measure.humidity">Humidity</entry>
+    <entry key="measure.sound">Sound Level</entry>
+    <entry key="measure.light">Light Level</entry>
+    <entry key="measure.wind">Wind</entry>
+    
+    <!-- Alerts -->
+    <entry key="alert.honey">Honey Production</entry>
+    <entry key="alert.colony">Colony Size</entry>
+    <entry key="alert.temperature">Temperature</entry>
+    <entry key="alert.humidity">Humidity</entry>
+</properties> 
