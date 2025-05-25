@@ -1,48 +1,17 @@
 package com.beehopuse.model;
 
-import jakarta.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "users")
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false, unique = true)
-    private String email;
-
-    @Column(nullable = false, unique = true)
     private String username;
-
-    @Column(nullable = false)
-    private String name;
-
-    @Column(name = "google_id", unique = true)
-    private String googleId;
-
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "role")
-    private Set<UserRole> roles = new HashSet<>();
-
-    @OneToMany(mappedBy = "owner")
-    private Set<Farm> ownedFarms = new HashSet<>();
-
-    @OneToMany(mappedBy = "responsibleAgent")
-    private Set<Hive> responsibleHives = new HashSet<>();
-
-    @OneToMany(mappedBy = "agent")
-    private Set<Visit> visits = new HashSet<>();
-
-    public enum UserRole {
-        ADMIN,
-        FARMER,
-        AGENT,
-        SUPERVISOR
-    }
+    private String password;
+    private String email;
+    private String fullName;
+    private String role;
+    private boolean active;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
     // Getters and Setters
     public Long getId() {
@@ -61,6 +30,14 @@ public class User {
         this.username = username;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -69,51 +46,43 @@ public class User {
         this.email = email;
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public String getGoogleId() {
-        return googleId;
+    public String getRole() {
+        return role;
     }
 
-    public void setGoogleId(String googleId) {
-        this.googleId = googleId;
+    public void setRole(String role) {
+        this.role = role;
     }
 
-    public Set<UserRole> getRoles() {
-        return roles;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setRoles(Set<UserRole> roles) {
-        this.roles = roles;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
-    public Set<Farm> getOwnedFarms() {
-        return ownedFarms;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setOwnedFarms(Set<Farm> ownedFarms) {
-        this.ownedFarms = ownedFarms;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Set<Hive> getResponsibleHives() {
-        return responsibleHives;
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setResponsibleHives(Set<Hive> responsibleHives) {
-        this.responsibleHives = responsibleHives;
-    }
-
-    public Set<Visit> getVisits() {
-        return visits;
-    }
-
-    public void setVisits(Set<Visit> visits) {
-        this.visits = visits;
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

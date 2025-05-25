@@ -6,14 +6,14 @@ taglib uri="jakarta.tags.fmt" prefix="fmt" %>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Login - Bee House Management</title>
+    <title>Register - Bee House Management</title>
     <style>
       body {
         font-family: Arial, sans-serif;
         background: #f0f8ff;
       }
-      .login-container {
-        max-width: 350px;
+      .register-container {
+        max-width: 400px;
         margin: 80px auto;
         background: #fff;
         padding: 30px;
@@ -32,7 +32,8 @@ taglib uri="jakarta.tags.fmt" prefix="fmt" %>
         margin-bottom: 5px;
       }
       input[type="text"],
-      input[type="password"] {
+      input[type="password"],
+      input[type="email"] {
         width: 100%;
         padding: 8px;
         border: 1px solid #ccc;
@@ -55,40 +56,47 @@ taglib uri="jakarta.tags.fmt" prefix="fmt" %>
         text-align: center;
         margin-bottom: 10px;
       }
-      .success {
-        color: #2ecc71;
+      .login-link {
         text-align: center;
-        margin-bottom: 10px;
+        margin-top: 15px;
       }
-      .register-link {
-        text-align: center;
-        margin-top: 10px;
+      .login-link a {
+        color: #3498db;
+        text-decoration: none;
+      }
+      .login-link a:hover {
+        text-decoration: underline;
       }
     </style>
   </head>
   <body>
-    <div class="login-container">
-      <h2>Login</h2>
+    <div class="register-container">
+      <h2>Register</h2>
       <form action="login" method="post">
-        <input type="hidden" name="action" value="login" />
+        <input type="hidden" name="action" value="register" />
         <div class="form-group">
           <label for="username">Username</label>
           <input type="text" id="username" name="username" required />
         </div>
         <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" required />
+        </div>
+        <div class="form-group">
           <label for="password">Password</label>
           <input type="password" id="password" name="password" required />
         </div>
-        <button type="submit" class="btn">Login</button>
+        <button type="submit" class="btn">Register</button>
       </form>
       <c:if test="${not empty error}">
         <div class="error">${error}</div>
       </c:if>
-      <c:if test="${not empty success}">
-        <div class="success">${success}</div>
-      </c:if>
-      <div class="register-link">
-        Don't have an account? <a href="register.jsp">Register here</a>
+      <div class="login-link">
+        Already have an account? <a href="login">Login here</a>
       </div>
     </div>
   </body>
