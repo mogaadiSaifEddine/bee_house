@@ -1,6 +1,6 @@
 package com.beehopuse.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -120,4 +120,4 @@ public class Site {
     public void setHives(Set<Hive> hives) {
         this.hives = hives;
     }
-} 
+}

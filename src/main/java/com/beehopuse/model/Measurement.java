@@ -1,6 +1,6 @@
 package com.beehopuse.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -114,4 +114,4 @@ public class Measurement {
     public void setSensorId(String sensorId) {
         this.sensorId = sensorId;
     }
-} 
+}

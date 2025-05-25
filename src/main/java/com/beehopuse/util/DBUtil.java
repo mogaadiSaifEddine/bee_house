@@ -3,6 +3,7 @@ package com.beehopuse.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,10 +23,10 @@ public class DBUtil {
     static {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            LOGGER.info("Mysql JDBC Driver Registered!");
+            LOGGER.info("MySQL JDBC Driver Registered!");
         } catch (ClassNotFoundException e) {
-            LOGGER.log(Level.SEVERE, "Error loading Mysql JDBC driver", e);
-            throw new RuntimeException("Error loading Mysql JDBC driver", e);
+            LOGGER.log(Level.SEVERE, "Error loading MySQL JDBC driver", e);
+            throw new RuntimeException("Error loading MySQL JDBC driver", e);
         }
     }
 
@@ -41,11 +42,22 @@ public class DBUtil {
         try {
             Properties connectionProps = new Properties();
             connectionProps.put("user", JDBC_USER);
-            connectionProps.put("password", "");
+            connectionProps.put("useSSL", "false");
+            connectionProps.put("serverTimezone", "UTC");
+            connectionProps.put("allowPublicKeyRetrieval", "true");
+            connectionProps.put("useUnicode", "true");
+            connectionProps.put("characterEncoding", "UTF-8");
+            connectionProps.put("innodb_lock_wait_timeout", "120");
+            connectionProps.put("lock_wait_timeout", "120");
 
             LOGGER.fine("Attempting to connect to database directly at: " + JDBC_URL);
             Connection conn = DriverManager.getConnection(JDBC_URL, connectionProps);
-            LOGGER.info("Successfully connected to H2 database");
+
+            try (Statement stmt = conn.createStatement()) {
+                stmt.execute("SET innodb_lock_wait_timeout=120");
+                stmt.execute("SET lock_wait_timeout=120");
+            }
+
             return conn;
         } catch (SQLException e) {
             LOGGER.log(Level.SEVERE, "Error connecting to database", e);

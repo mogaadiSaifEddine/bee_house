@@ -1,6 +1,6 @@
 package com.beehopuse.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -105,4 +105,4 @@ public class User {
     public void setVisits(Set<Visit> visits) {
         this.visits = visits;
     }
-} 
+}

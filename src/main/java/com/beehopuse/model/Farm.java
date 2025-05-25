@@ -1,6 +1,6 @@
 package com.beehopuse.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -64,4 +64,4 @@ public class Farm {
     public void setOwner(User owner) {
         this.owner = owner;
     }
-} 
+}

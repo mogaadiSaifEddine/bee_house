@@ -1,6 +1,6 @@
 package com.beehopuse.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "frames")
@@ -90,4 +90,4 @@ public class Frame {
     public void setStatus(FrameStatus status) {
         this.status = status;
     }
-} 
+}

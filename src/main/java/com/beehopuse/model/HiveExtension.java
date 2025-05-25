@@ -1,6 +1,6 @@
 package com.beehopuse.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -86,4 +86,4 @@ public class HiveExtension {
     public void setIsBase(Boolean isBase) {
         this.isBase = isBase;
     }
-} 
+}

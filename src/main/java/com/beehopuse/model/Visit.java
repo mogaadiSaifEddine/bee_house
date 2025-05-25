@@ -1,6 +1,6 @@
 package com.beehopuse.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -182,4 +182,4 @@ public class Visit {
     public void setStatus(VisitStatus status) {
         this.status = status;
     }
-} 
+}

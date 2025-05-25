@@ -18,13 +18,16 @@ com\beehopuse\model\Hive.class
 com\beehopuse\model\Measurement$Location.class
 com\beehopuse\model\Frame.class
 com\beehopuse\util\DBUtil.class
+com\beehopuse\service\HiveService.class
 com\beehopuse\filter\LocaleFilter.class
 com\beehopuse\model\Hive$HealthStatus.class
 com\beehopuse\listener\ResourceBundleListener.class
 com\beehopuse\model\User$UserRole.class
 com\beehopuse\model\Frame$FrameType.class
+com\beehopuse\service\impl\HiveServiceImpl.class
 com\beehopuse\model\Visit$VisitStatus.class
 com\beehopuse\service\impl\SiteServiceImpl.class
+com\beehopuse\servlet\HiveServlet.class
 com\beehopuse\listener\ResourceBundleListener$XMLResourceBundle.class
 com\beehopuse\model\Frame$FrameStatus.class
 com\beehopuse\filter\CharacterEncodingFilter.class
