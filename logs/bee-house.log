@@ -296,3 +296,4 @@ java.lang.IllegalArgumentException: Illegal base64 character 24
 2025-05-25 21:41:52.592 [main] INFO  com.beehopuse.config.DatabaseConfig - DataSource configured with URL: jdbc:mysql://localhost:3306/bee_house?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
 2025-05-25 21:41:53.439 [main] INFO  com.beehopuse.config.DatabaseConfig - Database connection test successful
 2025-05-25 21:41:53.440 [main] INFO  com.beehopuse.config.DatabaseConfig - Database connection pool initialized successfully
+2025-05-25 21:45:48.301 [JettyShutdownThread] INFO  com.beehopuse.config.DatabaseConfig - Database connection pool closed successfully
